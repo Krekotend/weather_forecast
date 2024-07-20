@@ -3,6 +3,17 @@
 
 This is a Django project that provides weather forecasts for cities. The application allows users to search for weather forecasts, view current weather conditions, and track search history.
 
+On assignment:
+- tests written
+- when visiting the site again, you will be asked to view the situation in the city in which the user has previously looked.
+Implemented using session saves
+- the definition history for each user will be saved, and there will be an API indicating how many times which city was entered
+Saved with the database. Can be viewed through the admin panel or [API](http://127.0.0.1:8000/api/city_search_counts/) 
+```examp
+YOUR_DOMEN/api/city_search_counts/
+```
+
+
 ## Installation
 
 ### Prerequisites
