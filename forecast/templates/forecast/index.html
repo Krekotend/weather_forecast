@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+<div class="container">
+    <!-- Main weather info -->
+    <div class="weather-today">
+        <div class="weather-box">
+            <h2 id="city-name">{{ city }}</h2>
+            <h4 id="country">{{ country }}</h4>
+            <p id="current-temp">Current Temp: {{ current_temp }}°C</p>
+            <p id="feelslike">Feelslike: {{ feelslike }}°C</p>
+            <p id="uv_humdt">UV: {{ uv }}, Humidity: {{ humidity }}</p>
+        </div>
+    </div>
+
+    <!-- Forecast -->
+    <div class="forecast">
+        {% if weather_data %}
+        {% for forecast in weather_data %}
+        <div class="forecast-day">
+            <p class="forecast-date">{{ forecast.0 }}</p>
+            <p class="forecast-temp">Avg Temp: {{ forecast.1 }}°C</p>
+            <p class="forecast-max-temp">Max Temp: {{ forecast.2 }}°C</p>
+            <p class="forecast-min-temp">Min Temp: {{ forecast.3 }}°C</p>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>No forecast data available</p>
+        {% endif %}
+    </div>
+
+    <!-- Search form -->
+    <div class="search-form">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <input type="text" id="city-input" name="city" placeholder="Enter city name" value="{{ form.city.value }}">
+            <button type="submit">Get Weather</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

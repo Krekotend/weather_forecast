@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Not Found</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <!-- Error message -->
+        <div class="error-message">
+            <h2>City Not Found</h2>
+            <p>The city you entered could not be found. Please try again.</p>
+        </div>
+
+        <!-- Search form -->
+        <div class="search-form">
+            <form method="POST" action="{% url 'weather_view' %}">
+                {% csrf_token %}
+                <input type="text" id="city-input" name="city" placeholder="Enter city name">
+                <button type="submit">Search Again</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

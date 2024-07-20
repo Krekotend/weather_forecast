@@ -1,0 +1,70 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8; /* Light pastel background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.weather-today {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.weather-box {
+    background-color: #ffffff; /* White background for the weather box */
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 300px;
+    text-align: center;
+}
+
+.forecast {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.forecast-day {
+    background-color: #ffffff; /* White background for the forecast boxes */
+    border-radius: 10px; /* Rounded corners */
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 100px;
+    text-align: center;
+}
+
+.search-form {
+    display: flex;
+    justify-content: center;
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+    width: 250px;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Bootstrap blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
